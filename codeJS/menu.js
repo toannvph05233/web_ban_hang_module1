@@ -23,10 +23,10 @@ if (account) {
       <div onclick="location.href='shoping-cart.html'" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" id="notiCart" data-notify="0">
        <i class="zmdi zmdi-shopping-cart"></i>
       </div>
-      <a href="/cozastore-master/Login.html" class="m-3">Đăng nhập </a> | <a href="/cozastore-master/Register.html" class="ml-3">Đăng ký</a>`
+      <a href="Login.html" class="m-3">Đăng nhập </a> | <a href="Register.html" class="ml-3">Đăng ký</a>`
 }
 
 function logout() {
     localStorage.setItem("accountLogin", null);
-    location.href = "/cozastore-master/index.html"
+    location.href = "index.html"
 }
