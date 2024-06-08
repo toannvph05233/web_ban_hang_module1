@@ -11,7 +11,7 @@ function showProduct(products) {
 
                      <a href="product-detail.html?name=${product.name}"
                         class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-                         Mua ngay
+                         Đặt ngay
                      </a>
              </div>
 
@@ -22,7 +22,7 @@ function showProduct(products) {
                      </a>
 
                      <span class="stext-105 cl3">
-									${product.price}
+									Giá vé : ${product.price} VND
 								</span>
                  </div>
 

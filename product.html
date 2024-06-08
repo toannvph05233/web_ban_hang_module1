@@ -34,13 +34,20 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<style>
-		.avatar {
-			width: 40px;
-			height: 40px;
-			border-radius: 50%;
-			overflow: hidden;
-			border: 2px solid #fff; /* Màu và độ rộng của viền */
+		.block2-pic {
+			width: 100%; /* Đảm bảo khối chứa ảnh chiếm toàn bộ chiều rộng */
+			max-width: 300px; /* Đặt kích thước tối đa cho khối chứa ảnh nếu cần */
+			height: 200px; /* Đặt chiều cao cố định cho khối chứa ảnh */
+			overflow: hidden; /* Ẩn phần ảnh vượt ra ngoài khối chứa */
 		}
+
+		.block2-pic img {
+			width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng khối chứa */
+			height: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều cao khối chứa */
+			object-fit: cover; /* Cắt ảnh để lấp đầy khối chứa mà không bị biến dạng */
+			display: block; /* Đảm bảo ảnh là block-level element để tránh khoảng trống dưới ảnh */
+		}
+
 	</style>
 <!--===============================================================================================-->
 </head>
@@ -57,7 +64,7 @@
 
 					<!-- Logo desktop -->
 					<a href="#" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
+						<img src="https://png.pngtree.com/png-clipart/20221110/original/pngtree-car-logo-design-template-vector-picture-image_3607214.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -74,8 +81,6 @@
 							<li class="label1" data-label1="hot">
 								<a href="shoping-cart.html">Giỏ hàng</a>
 							</li>
-
-
 
 							<li>
 								<a href="contact.html">Liên hệ</a>
@@ -102,9 +107,6 @@
 		<!-- Header Mobile -->
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->
-			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png"  alt="IMG-LOGO"></a>
-			</div>
 
 			<!-- Icon header -->
 			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
@@ -266,26 +268,26 @@
 		<div class="container">
 			<div class="p-b-10">
 				<h3 class="ltext-103 cl5">
-					TỔNG QUAN SẢN PHẨM
+					TỔNG QUAN DỊCH VỤ
 				</h3>
 			</div>
 
 			<div class="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-						Tất cả sản phẩm
+						Tất cả dịch vụ
 					</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".Nu">
-						Nữ
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".limousine">
+						Limousine
 					</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".Nam">
-						Nam
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".16cho">
+						Xe 16 chỗ
 					</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".PhuKien">
-						Phụ kiện
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".thuexe">
+						Thuê xe
 					</button>
 
 
@@ -343,19 +345,19 @@
 					<ul>
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Nữ
+								Limousine
 							</a>
 						</li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Nam
+								Xe 16 chỗ
 							</a>
 						</li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Phụ kiện
+								Thuê xe
 							</a>
 						</li>
 

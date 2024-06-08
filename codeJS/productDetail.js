@@ -115,14 +115,15 @@ let strDetail = `<div class="p-r-50 p-t-5 p-lr-0-lg">
         ${product.name}
     </h4>
     <span class="mtext-106 cl2">
-							${product.price}
+							Giá vé : ${product.price} VND
 						</span>
 
     <p class="stext-102 cl3 p-t-23">
-${truncateDescription(product.description, 200)}</p>
-
+         ${truncateDescription(product.description, 200)}</p>
     <!--  -->
     <div class="p-t-33">
+        <input placeholder="Nhập thời gian và điểm đón" style="border: 1px solid royalblue; padding: 10px; width: 300px" id="address">
+        <br>
       
         <div class="flex-w flex-r-m p-b-10">
             <div class="size-204 flex-w flex-m respon6-next">
@@ -138,7 +139,7 @@ ${truncateDescription(product.description, 200)}</p>
                         </div>
                 </div>
 
-                <button onclick="addCart('${product.name}',document.getElementById('quantity').value)"
+                <button onclick="addCart('${product.name}',document.getElementById('quantity').value,document.getElementById('address').value)"
                     class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
                     Add to cart
                 </button>
@@ -223,7 +224,7 @@ loadReview();
 function addReviewToProduct() {
     let account = JSON.parse(localStorage.getItem("accountLogin"));
     if (!account) {
-        location.href = "../Login.html";
+        location.href = "Login.html";
         return;
     }
     // Lấy các trường dữ liệu từ form

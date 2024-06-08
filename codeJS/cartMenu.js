@@ -41,8 +41,9 @@ function showNotifyCart() {
 
 
 
-function addCart(nameP, quantity){
+function addCart(nameP, quantity, address){
     let product = findProductByName(nameP);
+    product.address = address;
     for (const p of cartMenu) {
         if (name === p.name){
             p.quantity += parseInt(quantity);

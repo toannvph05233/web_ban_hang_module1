@@ -21,15 +21,16 @@ function showCart(cartMenu) {
         const p = cartMenu[i];
         total += p.price * p.quantity;
         str += `<tr class="table_row">
-                    <td class="column-1">
+                    <td >
                         <div class="how-itemcart1">
-                            <img src="${p.images[0]}" alt="IMG">
+                            <img src="${p.images[0]}" alt="IMG" >
                         </div>
                     </td>
-                    <td class="column-2">${p.name}</td>
-                    <td class="column-3">$ ${p.price}</td>
-                    <td class="column-4">
-                        <div class="wrap-num-product flex-w m-l-auto m-r-0">
+                    <td >${p.name}</td>
+                    <td style="color: red">${p.address}</td>
+                    <td style="color: #1e7e34">${p.price} VND</td>
+                    <td >
+                        <div class="wrap-num-product flex-w">
                             <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m" onclick="decreaseQuantity(${i})">
                                 <i class="fs-16 zmdi zmdi-minus"></i>
                             </div>
@@ -42,13 +43,13 @@ function showCart(cartMenu) {
                             </div>
                         </div>
                     </td>
-                    <td class="column-5">$ ${p.quantity * p.price}</td>
+                    <td style="color: #1e7e34"> ${p.quantity * p.price} VND</td>
                 </tr>`;
     }
 
     // Hiển thị giỏ hàng và tổng số tiền
     document.getElementById("showCart").innerHTML = str;
-    document.getElementById("totalCart").innerHTML = total + " $";
+    document.getElementById("totalCart").innerHTML = total + " VND";
 }
 
 // Hàm giảm số lượng của sản phẩm
@@ -76,3 +77,40 @@ function increaseQuantity(index) {
 // Gọi hàm hiển thị giỏ hàng khi trang được tải
 let cartMenu = JSON.parse(localStorage.getItem("cart"));
 showCart(cartMenu);
+
+function order() {
+    let account = JSON.parse(localStorage.getItem("accountLogin"));
+    if (!account) {
+        location.href = "Login.html";
+        return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let orders = JSON.parse(localStorage.getItem("order")) || [];
+
+    // Tính tổng tiền của giỏ hàng
+    let totalAmount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+    // Tạo thông tin đơn hàng mới
+    let newOrder = {
+        username: account.username,
+        date: new Date().toISOString(), // Thời gian hiện tại
+        totalAmount: totalAmount,
+        products: cart
+    };
+
+    // Thêm đơn hàng mới vào danh sách đơn hàng
+    orders.push(newOrder);
+
+    // Lưu lại đơn hàng và xóa giỏ hàng
+    localStorage.setItem("order", JSON.stringify(orders));
+    localStorage.setItem("cart", JSON.stringify([]));
+
+    alert("Đặt lịch thành công");
+    location.reload();
+}
+
+
+let btnOrder = document.getElementById("order");
+btnOrder.addEventListener("click", () => order());
+
