@@ -96,7 +96,8 @@ function order() {
         username: account.username,
         date: new Date().toISOString(), // Thời gian hiện tại
         totalAmount: totalAmount,
-        products: cart
+        products: cart,
+        status: true
     };
 
     // Thêm đơn hàng mới vào danh sách đơn hàng

@@ -10,7 +10,7 @@ if (account) {
       <div class="avatar m-2">
        <img src="${account.avatar}" width="40" alt="Avatar">
       </div>
-      <a style="color: #003eff" class="mr-3">${account.username} </a> | <a style="color: #003eff" onclick="logout()" class="ml-3"> Đăng xuất</a>`
+      <a href="MyOrder.html" style="color: #003eff" class="mr-3">${account.username} </a> | <a style="color: #003eff" onclick="logout()" class="ml-3"> Đăng xuất</a>`
 } else {
     document.getElementById("menu").innerHTML = ` 
     
