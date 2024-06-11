@@ -61,7 +61,7 @@
                 <td style="color: red">${'Đi : ' + p.address + ' - Đến: ' + p.addressDen}</td>
                 <td>${p.name + ' (' + p.quantity + ')'}</td>
                 <td>${p.carInfo ? p.carInfo : ''}</td>
-                <td>${order.status ? '<p style="color: red">đang xếp xe</p>' : '<p style="color: #1e7e34">Đã xong</p>'}</td>
+                <td>${order.status ? `<button  type="button" class="btn btn-danger" onclick="huyProduct(${index}, ${productIndex})">Hủy</button>` : '<p style="color: #1e7e34">Đã xong</p>'}</td>
             </tr>`;
                         str += row;
                     }
@@ -69,6 +69,17 @@
             });
 
             orderTable.innerHTML = str;
+        }
+
+        function huyProduct(indexO, indexP) {
+            const orders = JSON.parse(localStorage.getItem("order")) || [];
+            if (orders[indexO].products.length === 1) {
+                orders.splice(indexO, 1);
+            } else {
+                orders[indexO].products.splice(indexP, 1);
+            }
+            localStorage.setItem("order", JSON.stringify(orders));
+            location.reload();
         }
 
         document.addEventListener("DOMContentLoaded", function () {
