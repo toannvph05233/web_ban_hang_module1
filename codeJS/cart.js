@@ -27,7 +27,7 @@ function showCart(cartMenu) {
                         </div>
                     </td>
                     <td >${p.name}</td>
-                    <td style="color: red">${p.address}</td>
+                    <td style="color: red">${'Đi : ' + p.address + ' - Đến: ' + p.addressDen}</td>
                     <td style="color: #1e7e34">${p.price} VND</td>
                     <td >
                         <div class="wrap-num-product flex-w">

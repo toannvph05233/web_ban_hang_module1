@@ -29,22 +29,9 @@ function deleteAccount(index) {
 }
 
 function editAccount(index) {
-    let avatar = prompt("nhập avatar mới");
     let role = prompt("nhập role của account");
     let account = accounts[index];
-    account.avatar = avatar;
     account.role = role;
     display(accounts);
 }
 
-function findByUsername() {
-    let nameSearch = document.getElementById("search").value;
-    let accountsSearch = [];
-
-    for (let i = 0; i < accounts.length; i++) {
-        if (accounts[i].username.includes(nameSearch)) {
-            accountsSearch.push(accounts[i]);
-        }
-    }
-    display(accountsSearch);
-}

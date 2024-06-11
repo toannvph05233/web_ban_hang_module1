@@ -1,7 +1,7 @@
 let cartMenu = JSON.parse(localStorage.getItem("cart"));
 let products = JSON.parse(localStorage.getItem("products"));
 
-if (cartMenu === null){
+if (cartMenu === null) {
     cartMenu = [];
 }
 
@@ -40,12 +40,16 @@ function showNotifyCart() {
 }
 
 
-
-function addCart(nameP, quantity, address){
-    let product = findProductByName(nameP);
+function addCart(nameP, quantity, address, addressDen) {
+    if (address === '' || addressDen === ''){
+        alert("chưa nhập địa điểm")
+        return;
+    }
+        let product = findProductByName(nameP);
     product.address = address;
+    product.addressDen = addressDen;
     for (const p of cartMenu) {
-        if (name === p.name){
+        if (name === p.name) {
             p.quantity += parseInt(quantity);
             showCartModal();
             localStorage.setItem("cart", JSON.stringify(cartMenu));
@@ -61,7 +65,7 @@ function addCart(nameP, quantity, address){
 
 function findProductByName(name) {
     for (const p of products) {
-        if (p.name === name){
+        if (p.name === name) {
             return p;
         }
     }
