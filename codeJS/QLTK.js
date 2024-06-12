@@ -8,6 +8,7 @@ function display(accounts) {
             <td>${accounts[i].id}</td>
             <td>${accounts[i].username}</td>
             <td>${accounts[i].password}</td>
+            <td>${accounts[i].phone}</td>
             <td>
                 <img src='${accounts[i].avatar}' width="120" height="140">
             </td>
