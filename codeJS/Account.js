@@ -2,15 +2,17 @@ class Account {
     id;
     username;
     password;
+    phone;
     role;
     avatar;
 
-    constructor(id, username, password, role, avatar) {
+    constructor(id, username, password, role, avatar,phone) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.role = role;
         this.avatar = avatar;
+        this.phone = phone;
     }
 
     changePassword(newPass) {

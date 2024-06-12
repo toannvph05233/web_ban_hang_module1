@@ -122,6 +122,9 @@ let strDetail = `<div class="p-r-50 p-t-5 p-lr-0-lg">
          ${truncateDescription(product.description, 200)}</p>
     <!--  -->
     <div class="p-t-33">
+       
+        <input type="date" style="border: 1px solid royalblue; padding: 10px; width: 300px" id="date">
+         <br>
         <input placeholder="Nhập thời gian và điểm đón" style="border: 1px solid royalblue; padding: 10px; width: 300px" id="address">
         <br>
          <input placeholder="Nhập điểm đến" style="border: 1px solid royalblue; padding: 10px; width: 300px" id="addressDen">
@@ -141,7 +144,7 @@ let strDetail = `<div class="p-r-50 p-t-5 p-lr-0-lg">
                         </div>
                 </div>
 
-                <button onclick="addCart('${product.name}',document.getElementById('quantity').value,document.getElementById('address').value,document.getElementById('addressDen').value)"
+                <button onclick="addCart('${product.name}',document.getElementById('quantity').value,document.getElementById('address').value,document.getElementById('addressDen').value,document.getElementById('date').value)"
                     class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
                     Add to cart
                 </button>

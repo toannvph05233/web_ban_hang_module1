@@ -58,6 +58,7 @@
                 <td>${index + 1}</td>
                 <td>${new Date(order.date).toLocaleString()}</td>
                 <td>${p.price} VND</td>
+                <td>${p.date} </td>
                 <td style="color: red">${'Đi : ' + p.address + ' - Đến: ' + p.addressDen}</td>
                 <td>${p.name + ' (' + p.quantity + ')'}</td>
                 <td>${p.carInfo ? p.carInfo : ''}</td>
@@ -249,6 +250,7 @@
             <th>STT</th>
             <th>Thời Gian Mua</th>
             <th>Tổng Tiền</th>
+            <th>Date</th>
             <th>Địa chỉ</th>
             <th>Chi Tiết Sản Phẩm</th>
             <th>Thông tin xe</th>

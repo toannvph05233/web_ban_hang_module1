@@ -49,6 +49,10 @@
                                         <label class="form-label col-4" for="avatar">Avatar</label>
                                         <input type="text" id="avatar" class="form-control  col-7" />
                                     </div>
+                                    <div data-mdb-input-init class="form-outline mb-4 row">
+                                        <label class="form-label col-4" for="phone">Phone</label>
+                                        <input type="text" id="phone" class="form-control  col-7" />
+                                    </div>
 
                                     <div class="pt-1 mb-4">
                                         <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" onclick="register()" type="button">Đăng Ký</button>
@@ -80,6 +84,7 @@
         let re_password = document.getElementById("re_password").value;
         let role = "user";
         let avatar = document.getElementById("avatar").value;
+        let phone = document.getElementById("phone").value;
 
         for (let i = 0; i < accounts.length; i++) {
             if (username === accounts[i].username){
@@ -94,7 +99,7 @@
         }
 
         let idEnd = accounts[accounts.length -1].id;
-        let account = new Account(idEnd+1, username, password, role, avatar);
+        let account = new Account(idEnd+1, username, password, role, avatar,phone);
         accounts.push(account);
         localStorage.setItem("accounts", JSON.stringify(accounts));
         alert("tạo tài khoản thành công")

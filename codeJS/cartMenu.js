@@ -40,14 +40,15 @@ function showNotifyCart() {
 }
 
 
-function addCart(nameP, quantity, address, addressDen) {
-    if (address === '' || addressDen === ''){
+function addCart(nameP, quantity, address, addressDen,date) {
+    if (address === '' || addressDen === '' || date === ""){
         alert("chưa nhập địa điểm")
         return;
     }
         let product = findProductByName(nameP);
     product.address = address;
     product.addressDen = addressDen;
+    product.date = date;
     for (const p of cartMenu) {
         if (name === p.name) {
             p.quantity += parseInt(quantity);

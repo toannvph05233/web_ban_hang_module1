@@ -127,8 +127,8 @@ if (productsSto.length === 0) {
 
 let accounts = JSON.parse(localStorage.getItem("accounts"))|| [];
 if (accounts.length === 0) {
-    let user1 = new Account(1, "user", "123", "user", "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg")
-    let admin1 = new Account(2, "admin", "123", "admin", "https://binhminhdigital.com/StoreData/images/PageData/loi-khuyen-giup-ban-chup-anh-doi-thuong-dep-hon-binhminhdigital-6.jpg")
+    let user1 = new Account(1, "user", "123", "user", "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg","0912345678")
+    let admin1 = new Account(2, "admin", "123", "admin", "https://binhminhdigital.com/StoreData/images/PageData/loi-khuyen-giup-ban-chup-anh-doi-thuong-dep-hon-binhminhdigital-6.jpg","0912345678")
     accounts = [user1, admin1];
     localStorage.setItem("accounts", JSON.stringify(accounts));
 }
